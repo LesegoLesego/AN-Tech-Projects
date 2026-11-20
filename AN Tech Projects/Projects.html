@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AN Technologies - Projects</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f3f6;
+            margin: 0;
+            padding: 8px;
+        }
+
+        /* Company heading */
+        .company-header {
+            text-align: center;
+            padding: 20px;
+            color: #003366;
+        }
+
+        /* Project card */
+        .project-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background-color: white;
+            padding: 35px;
+            margin-bottom: 18px;
+            border-radius: 15px;
+            border-left: 6px solid #003366;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.10);
+        }
+
+        /* Project icon */
+        .project-icon {
+            font-size: 38px;
+            min-width: 55px;
+            text-align: center;
+        }
+
+        /* Project information */
+        .project-info h2 {
+            color: #003366;
+            margin: 0 0 18px 0;
+            font-size: 22px;
+        }
+
+        .project-info p {
+            color: #222;
+            font-size: 18px;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .project-card {
+                padding: 22px;
+                gap: 12px;
+            }
+
+            .project-icon {
+                font-size: 28px;
+                min-width: 40px;
+            }
+
+            .project-info h2 {
+                font-size: 18px;
+            }
+
+            .project-info p {
+                font-size: 15px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Company Name -->
+    <header class="company-header">
+        <h1>AN Technologies Projects</h1>
+    </header>
+
+    <!-- Projects will appear here -->
+    <div id="projects-container"></div>
+
+
+    <script>
+
+        // PROJECT DETAILS
+        // Edit the names and descriptions here
+
+        const projects = [
+
+            {
+                icon: "🚗",
+                name: "Ride City(Transport)",
+                description: "An e-hailing app built to create safe and convenient transport for passengers living remote areas  and small towns."
+            },
+
+            {
+                icon: "✈️ 🧳",
+                name: "Bona Travel Planner( Tourism)",
+                description: "An integrated  travel app designed  to provide intuitive travel solutions using  AI for Travellers."
+
+            },
+
+            {
+                icon: "🏢",
+                name: "  Tenant Management System(Property)",
+                description: "An agile tech solution  built to help property owners and managers maintain consistent blue collar workers."
+
+            },
+
+            {
+                icon: "🕒",
+                name: "Clock-It",
+                description: "An AI assisted tool built  to manage admin, financial and staff workforce and maintaining a seamless business flow without physically clocking neither checking paperwork to manage employees clock in and out time together with hours  employees worked."
+            },
+
+            {
+                icon: "📚 💻",
+                name: "Law Firm Management System (Law)",
+                description: "An AI assisted admin and workforce tool built for South African law firms."
+            },
+
+            {
+                icon: "🔧",
+                name: "Construction Management System(Insfrastructure)",
+                description: "An fast moving AI tool built  to provide compliace of tenants whenever something is wrong in the building neither repairs."
+            },
+
+            {
+                icon: "💉 💊",
+                name: "Clinics Management System(Health)",
+                description: "An engaging management system built to organize all clinical programs and documents for public and private healthcare."
+            }
+
+        ];
+
+
+        // DISPLAY PROJECTS
+        const container = document.getElementById("projects-container");
+
+        projects.forEach(project => {
+
+            const card = document.createElement("div");
+            card.className = "project-card";
+
+            const icon = document.createElement("div");
+            icon.className = "project-icon";
+            icon.textContent = project.icon;
+
+            const info = document.createElement("div");
+            info.className = "project-info";
+
+            const title = document.createElement("h2");
+            title.textContent = project.name;
+
+            const description = document.createElement("p");
+            description.textContent = project.description;
+
+            info.appendChild(title);
+            info.appendChild(description);
+
+            card.appendChild(icon);
+            card.appendChild(info);
+
+            container.appendChild(card);
+
+        });
+
+    </script>
+
+</body>
+</html>
